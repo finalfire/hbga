@@ -87,7 +87,7 @@ fn hamming(a: &String, b: &String) -> u32 {
 fn main() {
     let mut rng = rand::thread_rng();
 
-    let solution = String::from("Happy Birthday, Carmelololololg!");
+    let solution = String::from("Happy Birthday, Old Fox!");
 
     let del: String = (0..solution.len()).map(|_| '\x08').collect();
 
@@ -113,7 +113,6 @@ fn main() {
 
         if best.chromosome == solution {
             println!("{}", best.chromosome);
-            thread::sleep(time::Duration::from_secs(10));
             break;
         }
 
