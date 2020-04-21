@@ -36,18 +36,17 @@ impl Individual {
 }
 
 struct Population<'a> {
-    n: usize,
     individuals: Vec<Individual>,
-    f: &'a Fn(&Individual) -> u32
+    f: &'a dyn Fn(&Individual) -> u32
 }
 
 impl<'a> Population<'a> {
-    fn new(n: usize, k: usize, f: &'a Fn(&Individual) -> u32) -> Population<'a> {
+    fn new(n: usize, k: usize, f: &'a dyn Fn(&Individual) -> u32) -> Population<'a> {
         let mut individuals: Vec<Individual> = Vec::with_capacity(n);
         for _ in 0..n {
             individuals.push(Individual::new_rand(k));
         }
-        Population { n: n, individuals: individuals, f: f }
+        Population { individuals: individuals, f: f }
     }
 
     fn fitness(&mut self) {

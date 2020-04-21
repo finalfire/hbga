@@ -1,5 +1,5 @@
 [package]
-name = "genetic_happy_birthday"
+name = "hbga"
 version = "0.1.0"
 authors = ["finalfire <f.cauteruccio@gmail.com>"]
 edition = "2018"
